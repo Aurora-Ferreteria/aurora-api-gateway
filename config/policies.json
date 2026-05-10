@@ -13,6 +13,17 @@
       },
       "name": "auth0-jwt-auth",
       "policyType": "auth0-jwt-auth-inbound"
+    },
+    {
+  "handler": {
+    "export": "CorsInboundPolicy",
+    "module": "$import(@zuplo/runtime)",
+    "options": {
+      "allowOrigin": ["https://aurora-frontend-1a7.pages.dev"]
     }
+  },
+  "name": "cors-policy",
+  "policyType": "cors-inbound"
+}
   ]
 }
