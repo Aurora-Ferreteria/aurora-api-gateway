@@ -1,3 +1,18 @@
 {
-  "policies": []
+  "policies": [
+    {
+      "handler": {
+        "export": "Auth0JwtInboundPolicy",
+        "module": "$import(@zuplo/runtime)",
+        "options": {
+          "allowUnauthenticatedRequests": false,
+          "audience": "https://apiaurora",
+          "auth0Domain": "aurorajk.us.auth0.com",
+          "oAuthResourceMetadataEnabled": false
+        }
+      },
+      "name": "auth0-jwt-auth",
+      "policyType": "auth0-jwt-auth-inbound"
+    }
+  ]
 }
