@@ -5,7 +5,7 @@
     "title": "My Zuplo API"
   },
   "paths": {
-    "/(.*)": {
+    "/prueba": {
       "x-zuplo-path": {
         "pathMode": "open-api"
       },
