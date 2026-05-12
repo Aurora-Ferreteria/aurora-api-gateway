@@ -7,7 +7,7 @@
         "options": {
           "allowUnauthenticatedRequests": false,
           "audience": "https://apiaurora",
-          "auth0Domain": "https://aurorajk.us.auth0.com/",
+          "auth0Domain": "aurorajk.us.auth0.com",
           "oAuthResourceMetadataEnabled": false
         }
       },
