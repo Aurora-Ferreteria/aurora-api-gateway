@@ -46,7 +46,6 @@
           },
           "policies": {
             "inbound": [
-              "cors-policy",
               "auth0-jwt-auth"
             ]
           }
@@ -99,7 +98,6 @@
           "policies": {
             "inbound": [
               "auth0-jwt-auth",
-              "cors-policy",
               "x-zuplo-secret"
             ]
           }
