@@ -29,6 +29,82 @@
         },
         "operationId": "new-route-efb311c0"
       }
+    },
+    "/auth/verify-turnstile": {
+      "x-zuplo-path": {
+        "pathMode": "open-api"
+      },
+      "post": {
+        "summary": "New REST Operation",
+        "description": "",
+        "x-zuplo-route": {
+          "corsPolicy": "none",
+          "handler": {
+            "export": "default",
+            "module": "$import(./modules/verify-turnstile)",
+            "options": {}
+          },
+          "policies": {
+            "inbound": [
+              "cors-policy",
+              "auth0-jwt-auth"
+            ]
+          }
+        },
+        "operationId": "rest-6957edcd"
+      }
+    },
+    "/customer/register": {
+      "x-zuplo-path": {
+        "pathMode": "open-api"
+      },
+      "post": {
+        "summary": "New REST Operation",
+        "description": "",
+        "x-zuplo-route": {
+          "corsPolicy": "none",
+          "handler": {
+            "export": "urlForwardHandler",
+            "module": "$import(@zuplo/runtime)",
+            "options": {
+              "baseUrl": "https://aurora-backend-bqn9.onrender.com"
+            }
+          },
+          "policies": {
+            "inbound": [
+              "auth0-jwt-auth",
+              "cors-policy"
+            ]
+          }
+        },
+        "operationId": "rest-063ffa36"
+      }
+    },
+    "/customer": {
+      "x-zuplo-path": {
+        "pathMode": "open-api"
+      },
+      "get": {
+        "summary": "New REST Operation",
+        "description": "",
+        "x-zuplo-route": {
+          "corsPolicy": "none",
+          "handler": {
+            "export": "urlForwardHandler",
+            "module": "$import(@zuplo/runtime)",
+            "options": {
+              "baseUrl": "https://aurora-backend-bqn9.onrender.com"
+            }
+          },
+          "policies": {
+            "inbound": [
+              "auth0-jwt-auth",
+              "cors-policy"
+            ]
+          }
+        },
+        "operationId": "rest-e63f665b"
+      }
     }
   }
 }
