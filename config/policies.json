@@ -15,15 +15,33 @@
       "policyType": "auth0-jwt-auth-inbound"
     },
     {
-  "handler": {
-    "export": "CorsInboundPolicy",
-    "module": "$import(@zuplo/runtime)",
-    "options": {
-      "allowOrigin": ["https://aurora-frontend-1a7.pages.dev"]
+      "handler": {
+        "export": "CorsInboundPolicy",
+        "module": "$import(@zuplo/runtime)",
+        "options": {
+          "allowOrigin": [
+            "https://aurora-frontend-1a7.pages.dev"
+          ]
+        }
+      },
+      "name": "cors-policy",
+      "policyType": "cors-inbound"
+    },
+    {
+      "handler": {
+        "export": "SetHeadersInboundPolicy",
+        "module": "$import(@zuplo/runtime)",
+        "options": {
+          "headers": [
+            {
+              "name": "my-custom-header",
+              "value": "$env(BACKEND_SECRET)"
+            }
+          ]
+        }
+      },
+      "name": "x-zuplo-secret",
+      "policyType": "set-headers-inbound"
     }
-  },
-  "name": "cors-policy",
-  "policyType": "cors-inbound"
-}
   ]
 }
