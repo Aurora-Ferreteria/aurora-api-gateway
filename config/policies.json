@@ -16,25 +16,12 @@
     },
     {
       "handler": {
-        "export": "CorsInboundPolicy",
-        "module": "$import(@zuplo/runtime)",
-        "options": {
-          "allowOrigin": [
-            "https://aurora-frontend-1a7.pages.dev"
-          ]
-        }
-      },
-      "name": "cors-policy",
-      "policyType": "cors-inbound"
-    },
-    {
-      "handler": {
         "export": "SetHeadersInboundPolicy",
         "module": "$import(@zuplo/runtime)",
         "options": {
           "headers": [
             {
-              "name": "my-custom-header",
+              "name": "x-zuplo-secret",
               "value": "$env(BACKEND_SECRET)"
             }
           ]
