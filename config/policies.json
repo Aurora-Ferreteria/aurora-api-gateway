@@ -1,4 +1,17 @@
-{
+{  "corsPolicies": [
+    {
+      "name": "my-cors-policy",
+      "allowedOrigins": [
+        "https://aurora-frontend-1a7.pages.dev"
+      ],
+      "allowedMethods": ["GET", "POST", "PUT", "DELETE"],
+      "allowedHeaders": ["Authorization", "Content-Type"],
+      "exposeHeaders": ["X-Request-Id"],
+      "maxAge": 3600,
+      "allowCredentials": true
+    }
+  ],
+
   "policies": [
     {
       "handler": {
@@ -29,17 +42,6 @@
       },
       "name": "x-zuplo-secret",
       "policyType": "set-headers-inbound"
-    },
-    {
-  "handler": {
-    "export": "CorsInboundPolicy",
-    "module": "$import(@zuplo/runtime)",
-    "options": {
-      "allowOrigin": ["https://aurora-frontend-1a7.pages.dev"]
     }
-  },
-  "name": "cors-policy",
-  "policyType": "cors-inbound"
-}
   ]
 }

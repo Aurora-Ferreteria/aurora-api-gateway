@@ -61,7 +61,7 @@
         "summary": "idType",
         "description": "",
         "x-zuplo-route": {
-          "corsPolicy": "none",
+          "corsPolicy": "my-cors-policy",
           "handler": {
             "export": "urlForwardHandler",
             "module": "$import(@zuplo/runtime)",
@@ -71,7 +71,6 @@
           },
           "policies": {
             "inbound": [
-              "cors-policy",
               "auth0-jwt-auth",
               "x-zuplo-secret"
             ]
@@ -88,7 +87,7 @@
         "summary": "customer",
         "description": "",
         "x-zuplo-route": {
-          "corsPolicy": "none",
+          "corsPolicy": "my-cors-policy",
           "handler": {
             "export": "urlForwardHandler",
             "module": "$import(@zuplo/runtime)",
@@ -98,7 +97,6 @@
           },
           "policies": {
             "inbound": [
-              "cors-policy",
               "auth0-jwt-auth",
               "x-zuplo-secret"
             ]
@@ -110,7 +108,7 @@
         "summary": "customer register",
         "description": "",
         "x-zuplo-route": {
-          "corsPolicy": "none",
+          "corsPolicy": "my-cors-policy",
           "handler": {
             "export": "urlForwardHandler",
             "module": "$import(@zuplo/runtime)",
@@ -120,7 +118,6 @@
           },
           "policies": {
             "inbound": [
-              "cors-policy",
               "auth0-jwt-auth",
               "x-zuplo-secret"
             ]
