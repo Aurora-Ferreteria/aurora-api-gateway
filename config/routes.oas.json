@@ -18,7 +18,7 @@
             "export": "urlRewriteHandler",
             "module": "$import(@zuplo/runtime)",
             "options": {
-              "rewritePattern": "${env.BACKEND_URL}"
+              "rewritePattern": "${env.BACKEND_URL}/prueba"
             }
           },
           "policies": {
@@ -53,7 +53,7 @@
         "operationId": "rest-6957edcd"
       }
     },
-    "/api/v1/id-types": {
+    "/api/v1/identification-types": {
       "x-zuplo-path": {
         "pathMode": "open-api"
       },
@@ -66,7 +66,7 @@
             "export": "urlForwardHandler",
             "module": "$import(@zuplo/runtime)",
             "options": {
-              "baseUrl": "${env.BACKEND_URL}"
+              "baseUrl": "${env.BACKEND_URL}/api/v1/identification-types"
             }
           },
           "policies": {
@@ -93,7 +93,7 @@
             "export": "urlForwardHandler",
             "module": "$import(@zuplo/runtime)",
             "options": {
-              "baseUrl": "${env.BACKEND_URL}"
+              "baseUrl": "${env.BACKEND_URL}/api/v1/customers"
             }
           },
           "policies": {
@@ -115,7 +115,7 @@
             "export": "urlForwardHandler",
             "module": "$import(@zuplo/runtime)",
             "options": {
-              "baseUrl": "${env.BACKEND_URL}"
+              "baseUrl": "${env.BACKEND_URL}/api/v1/customers"
             }
           },
           "policies": {
