@@ -18,7 +18,7 @@
             "export": "urlRewriteHandler",
             "module": "$import(@zuplo/runtime)",
             "options": {
-              "rewritePattern": "${env.BACKEND_URL}/$1"
+              "rewritePattern": "${env.BACKEND_URL}"
             }
           },
           "policies": {
@@ -35,7 +35,7 @@
         "pathMode": "open-api"
       },
       "post": {
-        "summary": "New REST Operation",
+        "summary": "captcha",
         "description": "",
         "x-zuplo-route": {
           "corsPolicy": "none",
@@ -53,12 +53,12 @@
         "operationId": "rest-6957edcd"
       }
     },
-    "/customer/register": {
+    "/api/v1/customers": {
       "x-zuplo-path": {
         "pathMode": "open-api"
       },
       "post": {
-        "summary": "New REST Operation",
+        "summary": "customer",
         "description": "",
         "x-zuplo-route": {
           "corsPolicy": "none",
@@ -66,25 +66,26 @@
             "export": "urlForwardHandler",
             "module": "$import(@zuplo/runtime)",
             "options": {
-              "baseUrl": "https://aurora-backend-bqn9.onrender.com"
+              "baseUrl": "${env.BACKEND_URL}"
             }
           },
           "policies": {
             "inbound": [
               "auth0-jwt-auth",
-              "x-zuplo-secret"
+              "x-zuplo-secret",
+              "cors-policy"
             ]
           }
         },
         "operationId": "rest-063ffa36"
       }
     },
-    "/customer": {
+    "/api/v1/id-types": {
       "x-zuplo-path": {
         "pathMode": "open-api"
       },
       "get": {
-        "summary": "New REST Operation",
+        "summary": "idType",
         "description": "",
         "x-zuplo-route": {
           "corsPolicy": "none",
@@ -92,13 +93,14 @@
             "export": "urlForwardHandler",
             "module": "$import(@zuplo/runtime)",
             "options": {
-              "baseUrl": "https://aurora-backend-bqn9.onrender.com"
+              "baseUrl": "${env.BACKEND_URL}"
             }
           },
           "policies": {
             "inbound": [
               "auth0-jwt-auth",
-              "x-zuplo-secret"
+              "x-zuplo-secret",
+              "cors-policy"
             ]
           }
         },
