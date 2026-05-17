@@ -53,33 +53,6 @@
         "operationId": "rest-6957edcd"
       }
     },
-    "/api/v1/customers": {
-      "x-zuplo-path": {
-        "pathMode": "open-api"
-      },
-      "post": {
-        "summary": "customer",
-        "description": "",
-        "x-zuplo-route": {
-          "corsPolicy": "none",
-          "handler": {
-            "export": "urlForwardHandler",
-            "module": "$import(@zuplo/runtime)",
-            "options": {
-              "baseUrl": "${env.BACKEND_URL}"
-            }
-          },
-          "policies": {
-            "inbound": [
-              "auth0-jwt-auth",
-              "x-zuplo-secret",
-              "cors-policy"
-            ]
-          }
-        },
-        "operationId": "rest-063ffa36"
-      }
-    },
     "/api/v1/id-types": {
       "x-zuplo-path": {
         "pathMode": "open-api"
@@ -98,13 +71,62 @@
           },
           "policies": {
             "inbound": [
+              "cors-policy",
               "auth0-jwt-auth",
-              "x-zuplo-secret",
-              "cors-policy"
+              "x-zuplo-secret"
             ]
           }
         },
         "operationId": "rest-e63f665b"
+      }
+    },
+    "/api/v1/customers": {
+      "x-zuplo-path": {
+        "pathMode": "open-api"
+      },
+      "get": {
+        "summary": "customer",
+        "description": "",
+        "x-zuplo-route": {
+          "corsPolicy": "none",
+          "handler": {
+            "export": "urlForwardHandler",
+            "module": "$import(@zuplo/runtime)",
+            "options": {
+              "baseUrl": "${env.BACKEND_URL}"
+            }
+          },
+          "policies": {
+            "inbound": [
+              "cors-policy",
+              "auth0-jwt-auth",
+              "x-zuplo-secret"
+            ]
+          }
+        },
+        "operationId": "rest-063ffa36"
+      },
+      "post": {
+        "summary": "customer register",
+        "description": "",
+        "x-zuplo-route": {
+          "corsPolicy": "none",
+          "handler": {
+            "export": "urlForwardHandler",
+            "module": "$import(@zuplo/runtime)",
+            "options": {
+              "baseUrl": "${env.BACKEND_URL}"
+            }
+          },
+          "policies": {
+            "inbound": [
+              "cors-policy",
+              "auth0-jwt-auth",
+              "x-zuplo-secret"
+            ]
+          }
+        },
+        "operationId": "rest-063ffa36-duplicate"
       }
     }
   }
