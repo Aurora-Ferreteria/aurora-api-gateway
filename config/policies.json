@@ -2,7 +2,7 @@
     {
       "name": "my-cors-policy",
       "allowedOrigins": [
-        "https://aurora-frontend-1a7.pages.dev, https://aurorajpkd.com"
+        "https://aurorajpkd.com"
       ],
       "allowedMethods": ["GET", "POST", "PUT", "DELETE"],
       "allowedHeaders": ["Authorization", "Content-Type"],
